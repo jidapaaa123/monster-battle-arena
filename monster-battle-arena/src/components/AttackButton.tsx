@@ -1,15 +1,13 @@
 type AttackButtonProps = {
   onAttack: () => void,
-  attackName: string;
+  text: string
 };
 
-function AttackButton({ onAttack, attackName }: AttackButtonProps) {
+function AttackButton({ onAttack, text }: AttackButtonProps) {
   return (
-    <div>
-      <button className="attack-button" onClick={onAttack}>
-        {attackName} Attack!
-      </button>
-    </div>
+    <button className="attack-button" onClick={onAttack}>
+      {text}
+    </button>
   );
 }
 
