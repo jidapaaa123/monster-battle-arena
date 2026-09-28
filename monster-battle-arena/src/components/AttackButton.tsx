@@ -1,14 +1,15 @@
-type AttackButtonProps = {
-  onAttack: () => void,
-  text: string
+type ActionButtonProps = {
+  onAction: () => void,
+  text: string,
+  variant: "attack" | "heal"
 };
 
-function AttackButton({ onAttack, text }: AttackButtonProps) {
+function ActionButton({ onAction, text, variant }: ActionButtonProps) {
   return (
-    <button className="attack-button" onClick={onAttack}>
+    <button className={`${variant}-button`} onClick={onAction}>
       {text}
     </button>
   );
 }
 
-export default AttackButton;
+export default ActionButton;

@@ -1,8 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import Monster from "./components/Monster";
-import AttackButton from "./components/AttackButton";
-import HealButton from "./components/HealButton";
+import ActionButton from "./components/AttackButton";
 import BattleStatus from "./components/BattleStatus";
 
 function App() {
@@ -78,26 +77,34 @@ function App() {
 
         <section className="actions">
           <div className="attack-actions">
-            <AttackButton
-              onAttack={() => handleAttackMonster(normalDamage)}
+            <ActionButton
+              onAction={() => handleAttackMonster(normalDamage)}
               text="Normal Attack!"
+              variant="attack"
             />
-            <AttackButton
-              onAttack={() => handleAttackMonster(heavyDamage)}
+            <ActionButton
+              onAction={() => handleAttackMonster(heavyDamage)}
               text="Heavy Attack!"
+              variant="attack"
             />
-            <AttackButton
-              onAttack={() => handleAttackMonster(ultimateDamage)}
+            <ActionButton
+              onAction={() => handleAttackMonster(ultimateDamage)}
               text="Ultimate Attack!"
+              variant="attack"
             />
           </div>
 
           <div className="defense-actions">
-            <AttackButton
-              onAttack={() => handleAttackPlayer(monsterDamage)}
+            <ActionButton
+              onAction={() => handleAttackPlayer(monsterDamage)}
               text="Monster Attacks"
+              variant="attack"
             />
-            <HealButton onHeal={() => handleHealPlayer(20)} text="Drink Potion" />
+            <ActionButton
+              onAction={() => handleHealPlayer(20)}
+              text="Drink Potion"
+              variant="heal"
+            />
           </div>
         </section>
 
